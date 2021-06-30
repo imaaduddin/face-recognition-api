@@ -12,7 +12,7 @@ const database = {
       id: "123",
       name: "Sasuke",
       email: "sasuke@gmail.com",
-      password: "chidori",
+      // password: "chidori",
       entries: 0,
       joined: new Date()
     },
@@ -20,9 +20,16 @@ const database = {
       id: "124",
       name: "Naruto",
       email: "naruto@gmail.com",
-      password: "iloveramen",
+      // password: "iloveramen",
       entries: 0,
       joined: new Date()
+    }
+  ],
+  login: [
+    {
+      id: "987",
+      hask: "",
+      email: "sasuke@gmail.com"
     }
   ]
 }
@@ -81,6 +88,18 @@ app.put("/image", (req, res) => {
     res.status(400).json("status not found");
   }
 })
+
+// app.put("/image", (req, res) => {
+//   const {id} = req.body;
+//   let found = false;
+//   database.users.forEach(user => {
+//     if (user.id === id) {
+//       found = true;
+//       user.entries++;
+//       return res.json(user.entries);
+//     } 
+//   })
+// })
 
 app.listen(3000, () => {
   console.log("app is running on port 3000");
